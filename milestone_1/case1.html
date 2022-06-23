@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Study 1</title>
+  <!-- Resources -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type='text/css' media='all' href="css/case.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap.min.css">
+  <!-- JS -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/case.js"></script>
+</head>
+
+<div id="loaderId" class="loader loader--active">
+  <div class="loader__tile"></div>
+  <div class="loader__tile"></div>
+  <div class="loader__tile"></div>
+  <div class="loader__tile"></div>
+  <div class="loader__tile"></div>
+</div>
+
+<body style="background-color: beige;">
+  <a href="index.html">
+    <div class="close-presentation">&times;</div>
+  </a>
+  <form>
+    <input type="radio" name="fancy" autofocus value="one" id="one" />
+    <input type="radio" name="fancy" value="two" id="two" />
+    <input type="radio" name="fancy" value="three" id="three" />
+    <input type="radio" name="fancy" value="four" id="four" />
+    <input type="radio" name="fancy" value="five" id="five" />
+    <input type="radio" name="fancy" value="six" id="six" />
+    <input type="radio" name="fancy" value="seven" id="seven" />
+    <input type="radio" name="fancy" value="eight" id="eight" />
+    <input type="radio" name="fancy" value="nine" id="nine" />
+    <input type="radio" name="fancy" value="nine" id="ten" />
+    <label for="one">
+      <div class="center">
+        <img style="height: 950px;" src="images/hk_covid.PNG">
+      </div>
+    </label>
+    <label for="two">
+      <div class="content">
+        <h1>What?</h1>
+        <div class="points">
+          <ul>
+            <li>Number of people in Hong Kong took 1st, 2nd, 3rd and 4th dose</li>
+            <li>Number of new cases tested positive for Covid 19 in Hong Kong today</li>
+            <li>Total number of cases of Covid 19 patient by health category<br>(Confirmed, Asymptomatic, Re-positive)</li>
+            <li>Total number of Death, Hospitalised and ICU cases</li>
+            <li>Additional number of cases tested positive today categorise by<br>Nucleic Acid Test, RAT, Local and Imported cases</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="three">
+      <div class="content">
+        <h1>Why?</h1>
+        <div class="points">
+          <ul>
+            <li>To understand the latest Covid 19 status in Hong Kong</li>
+            <li>To keep track of any recent surge of covid19 cases</li>
+            <li>Number of doses administered is enough for the population in Hong Kong</li>
+            <li>Total number of Death, Hospitalised and ICU cases</li>
+            <li>Knowing vaccination will prevent severe symptoms, by tracking the amount of<br>people taking the number of each dosage of vaccination will know if the people<br>in Hong Kong are safe to go out</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="four">
+      <div class="content">
+        <h1>Idiom?</h1>
+        <div class="points">
+          <ul>
+            <li>Grids and textual words</li>
+            <li>Usage of different colours compromising of saturated and unsaturated colours</li>
+            <li>Usage of single font type across the entire dashboard (Helvetica)</li>
+            <li>Usage of matching colour and identical colours</li>
+            <li>Important information are being shown above the fold</li>
+            <li>Sufficient whitespace</li>
+            <li>Responsive web page</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="five">
+      <div class="content">
+        <h1>Problems</h1>
+
+        <table class="table">
+          <tbody>
+            <tr class="table-light">
+              <td class="imageHolder"><img src="images/hk_prob1.PNG"></td>
+              <td class="contentHolder">
+                <ul style="margin-top: 0px;">
+                  <li>Saturated colours are hard to see</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="table-light">
+              <td class="imageHolder"><img src="images/hk_prob2.PNG"></td>
+              <td class="contentHolder">
+                <ul style="margin-top: 0px;">
+                  <li>Lacking of graph to further explain the data</li>
+                  <li>Not able to see any trends in the data</li>
+                  <li>Numbers itself do not show seriousness of the<br>current situation</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </label>
+    <label for="six">
+      <div class="content">
+        <h1>Problems</h1>
+
+        <table class="table">
+          <tbody>
+            <tr class="table-light">
+              <td class="imageHolder"><img src="images/hk_prob4.PNG"></td>
+              <td class="contentHolder">
+                <ul style="margin-top: 0px;">
+                  <li>Background and foreground colours are matching<br>colours which may result in eye fatigue</li>
+                  <li>Having background colour for certain title cause<br>the user to assume it as a mouseover effect</li>
+                  <li>False affordance</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="table-light">
+              <td class="imageHolder"><img src="images/hk_prob3.PNG"></td>
+              <td class="contentHolder">
+                <ul style="margin-top: 0px;">
+                  <li>Font size too small</li>
+                  <li>No references to which part of the data</li>
+                  <li>User may not pay attention to the words</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </label>
+    <label for="seven">
+      <div class="content">
+        <h1>Problems</h1>
+        <table class="table">
+          <tbody>
+            <tr class="table-light">
+              <td class="imageHolder"><img src="images/hk_prob6.PNG"></td>
+              <td class="contentHolder">
+                <ul style="margin-top: 0px;">
+                  <li>Chart only able to show places that have covid case</li>
+                  <li>Does not show the amount of cases in the area</li>
+                  <li>Does not tell the user the seriousness of situation in<br>each area</li>
+                  <li>Chart only plot data within a time range</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="table-light">
+              <td class="imageHolder"><img src="images/hk_prob5.PNG"></td>
+              <td class="contentHolder">
+                <ul style="margin-top: 0px;">
+                  <li>Some part of the data is cut off</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </label>
+    <label for="eight">
+      <section class="section">
+        <div class="close-section">&times;</div>
+        <div class="demo-box">Improvement 1</div>
+        <div class="demo-box-1">
+          <h1>Line Graph</h1>
+          <canvas id="lineChart" style="padding:25px;"></canvas>
+        </div>
+      </section>
+      <section class="section">
+        <div class="close-section">&times;</div>
+        <div class="demo-box">Improvement 2</div>
+        <div class="demo-box-1">
+          <h1>Bar Graph</h1>
+          <select style="font-size: 1rem; width: 80px; float: right;">
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+          </select>
+          <canvas id="barChart" style="padding:25px;"></canvas>
+        </div>
+      </section>
+      <section class="section">
+        <div class="close-section">&times;</div>
+        <div class="demo-box">Improvement 3</div>
+        <div class="demo-box-1">
+          <h1>Pie Chart</h1>
+          <canvas id="pieChart" style="padding: 25px;"></canvas>
+        </div>
+      </section>
+      <section class="section">
+        <div class="close-section">&times;</div>
+        <div class="demo-box">Improvement 4</div>
+        <div class="demo-box-1">
+          <h1>Geospatial Map</h1>
+          <svg id="svgId"></svg>
+          <div class="tooltip"></div>
+        </div>
+      </section>
+    </label>
+    <label for="nine">
+      <div class="content">
+        <h1>CSS Styling</h1>
+        <div class="points">
+          <ul>
+            <li>Selecting the suitable font size / weight base on the importancy of the information</li>
+            <li>Selecting the color usage that will not strain the user eyes</li>
+            <li>Prevent using similar color contrast between the background and the font color</li>
+            <li>Website to be responsive to prevent any data of being cut off</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="ten">
+      <div class="center">
+        <img src="images/customer-service.png">
+      </div>
+    </label>
+  </form>
+</body>
+
+</html>
