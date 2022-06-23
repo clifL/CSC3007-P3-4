@@ -65,14 +65,14 @@ function drawGeo() {
       .enter()
       .append("path")
       .attr("d", geopath)
-      .attr("fill", function(d) {
+      .attr("fill", function (d) {
         d.total = listData[0][d.properties.Name] || 0;
         return myColor(d.total);
       })
       .attr("stroke", "#fff")
       .attr("stroke-width", 1)
       .on("mouseover", (event, d) => {
-        d3.select(event.currentTarget).style("fill", function() {
+        d3.select(event.currentTarget).style("fill", function () {
           return d3.rgb(d3.select(event.currentTarget).style("fill")).darker(0.5);
         });
         d3.select(".tooltip")
@@ -89,7 +89,7 @@ function drawGeo() {
         path.style("stroke", "orange").style("stroke-width", 3);
       })
       .on("mouseout", (event, d) => {
-        d3.select(event.currentTarget).style("fill", function() {
+        d3.select(event.currentTarget).style("fill", function () {
           return d3.rgb(d3.select(event.currentTarget).style("fill")).darker(-0.5);
         });
         d3.select(".tooltip").text("").style("opacity", 0);
@@ -102,7 +102,7 @@ function drawGeo() {
   })
 }
 
-window.onload = function() {
+window.onload = function () {
   var loader = document.getElementById('loaderId')
   var close = document.getElementsByClassName('close-presentation')
 
@@ -231,7 +231,7 @@ window.onload = function() {
         label: 'Hospitalised',
         data: [12, 24, 20, 8, 15, 19, 25, 29, 31, 25, 18, 20],
         borderColor: 'rgb(54, 162, 235)',
-        backgroundColor:'rgba(54, 162, 235, 0.5)',
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
         borderWidth: 2
       },
       {
@@ -270,7 +270,7 @@ window.onload = function() {
   const pieData = {
     labels: [
       'Unvaccinated',
-      'Unvaccinated'
+      'Vaccinated'
     ],
     datasets: [{
       label: 'Population with 1st Dose',

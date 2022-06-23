@@ -5,12 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Case Study 2</title>
+  <!-- Resources -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
   <!-- CSS -->
   <link rel="stylesheet" type='text/css' media='all' href="css/case.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap.min.css">
   <!-- JS -->
   <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/case.js"></script>
+  <script src="js/london.js"></script>
 </head>
 
 <div id="loaderId" class="loader loader--active">
@@ -45,9 +50,15 @@
         <h1>What?</h1>
         <div class="points">
           <ul>
-            <li>One</li>
-            <li>Tow</li>
-            <li>Three</li>
+            <li>Weather Information</li>
+            <li>Traffic Information</li>
+            <li>Event & News</li>
+            <li>Social Media</li>
+            <li>Stocks</li>
+            <li>Maps</li>
+            <li>Electricity Usage</li>
+            <li>Overall Happiness</li>
+            <li>Air Pollution</li>
           </ul>
         </div>
       </div>
@@ -57,9 +68,11 @@
         <h1>Why?</h1>
         <div class="points">
           <ul>
-            <li>One</li>
-            <li>Tow</li>
-            <li>Three</li>
+            <li>Potential Investments</li>
+            <li>Travel Planning</li>
+            <li>Health</li>
+            <li>Governance</li>
+            <li>Exercise</li>
           </ul>
         </div>
       </div>
@@ -69,9 +82,11 @@
         <h1>Idiom?</h1>
         <div class="points">
           <ul>
-            <li>One</li>
-            <li>Tow</li>
-            <li>Three</li>
+            <li>Grids and textual words</li>
+            <li>Usage of different colours compromising of saturated and unsaturated colours</li>
+            <li>Usage of single font type across the entire dashboard (Helvetica)</li>
+            <li>Freestyle aligmment that makes the whole dashboard untidy</li>
+            <li>Real-time data is reflected on the dashboard</li>
           </ul>
         </div>
       </div>
@@ -84,23 +99,23 @@
           <tbody>
             <tr class="table-light">
               <!-- Change Image -->
-              <td class="imageHolder"><img src="images/hk_prob1.PNG"></td>
+              <td class="imageHolder"><img src="images/london_prob1.PNG"></td>
               <td class="contentHolder">
                 <ul style="margin-top: 0px;">
-                  <li>One</li>
-                  <li>Tow</li>
-                  <li>Three</li>
+                  <li>Insufficient whitespace</li>
+                  <li>Related data are not grouped together</li>
+                  <li>Usage of abbrevation that may be unknown to user</li>
+                  <li>Saturated colours are hard to see</li>
                 </ul>
               </td>
             </tr>
             <tr class="table-light">
               <!-- Change Image -->
-              <td class="imageHolder"><img src="images/hk_prob2.PNG"></td>
+              <td class="imageHolder"><img src="images/london_prob2.PNG"></td>
               <td class="contentHolder">
                 <ul style="margin-top: 0px;">
-                  <li>One</li>
-                  <li>Tow</li>
-                  <li>Three</li>
+                  <li>There is only weather information of 1 station to be shown</li>
+                  <li>The weather information is not real-time, has not been updated</li>
                 </ul>
               </td>
             </tr>
@@ -116,23 +131,21 @@
           <tbody>
             <tr class="table-light">
               <!-- Change Image -->
-              <td class="imageHolder"><img src="images/hk_prob4.PNG"></td>
+              <td class="imageHolder"><img src="images/london_prob4.PNG"></td>
               <td class="contentHolder">
                 <ul style="margin-top: 0px;">
-                  <li>One</li>
-                  <li>Tow</li>
-                  <li>Three</li>
+                  <li>The data is hard to interpret on its own</li>
+                  <li>The numerical data has little or no meaning</li>
                 </ul>
               </td>
             </tr>
             <tr class="table-light">
               <!-- Change Image -->
-              <td class="imageHolder"><img src="images/hk_prob3.PNG"></td>
+              <td class="imageHolder"><img src="images/london_prob3.PNG"></td>
               <td class="contentHolder">
                 <ul style="margin-top: 0px;">
-                  <li>One</li>
-                  <li>Tow</li>
-                  <li>Three</li>
+                  <li>The data has inconsistent font size</li>
+                  <li>The data is not organized and tidy</li>
                 </ul>
               </td>
             </tr>
@@ -141,96 +154,47 @@
       </div>
     </label>
     <label for="seven">
-      <div class="content">
-        <h1>Problems</h1>
-
-        <table class="table">
-          <tbody>
-            <tr class="table-light">
-              <!-- Change Image -->
-              <td class="imageHolder"><img src="images/hk_prob6.PNG"></td>
-              <td class="contentHolder">
-                <ul style="margin-top: 0px;">
-                  <li>One</li>
-                  <li>Tow</li>
-                  <li>Three</li>
-                </ul>
-              </td>
-            </tr>
-            <tr class="table-light">
-              <!-- Change Image -->
-              <td class="imageHolder"><img src="images/hk_prob5.PNG"></td>
-              <td class="contentHolder">
-                <ul style="margin-top: 0px;">
-                  <li>One</li>
-                  <li>Tow</li>
-                  <li>Three</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </label>
-    <label for="eight">
       <section class="section">
         <div class="close-section">&times;</div>
         <div class="demo-box">Improvement 1</div>
         <div class="demo-box-1">
-          <h1>Improvement 1</h1>
-          <div class="points">
-            <ul>
-              <li>One</li>
-              <li>Tow</li>
-              <li>Three</li>
-            </ul>
-          </div>
+          <h1>Line Graph (Bicycle)</h1>
+          <canvas id="bicycleChart" style="padding:25px;"></canvas>
         </div>
       </section>
       <section class="section">
         <div class="close-section">&times;</div>
         <div class="demo-box">Improvement 2</div>
         <div class="demo-box-1">
-          <h1>Improvement 2</h1>
-          <div class="points">
-            <ul>
-              <li>One</li>
-              <li>Tow</li>
-              <li>Three</li>
-            </ul>
-          </div>
+          <h1>Twitter Trends</h1>
+          <table id="data" class="table table-dark"></table>
         </div>
       </section>
       <section class="section">
         <div class="close-section">&times;</div>
         <div class="demo-box">Improvement 3</div>
         <div class="demo-box-1">
-          <h1>Improvement 3</h1>
-          <div class="points">
-            <ul>
-              <li>One</li>
-              <li>Tow</li>
-              <li>Three</li>
-            </ul>
-          </div>
+          <h1>Overall Happiness Chart</h1>
+          <canvas id="pieChart" style="padding: 25px;"></canvas>
         </div>
       </section>
       <section class="section">
         <div class="close-section">&times;</div>
         <div class="demo-box">Improvement 4</div>
         <div class="demo-box-1">
-          <h1>Improvement 4</h1>
+          <h1>CSS Styling</h1>
           <div class="points">
             <ul>
-              <li>One</li>
-              <li>Tow</li>
-              <li>Three</li>
+              <li>Selecting the suitable font size / weight base on the importancy of the information</li>
+              <li>Selecting the color usage that will not strain the user eyes</li>
+              <li>Prevent using similar color contrast between the background and the font color</li>
+              <li>The livestream should be grouped together and auto-play for user to preview the traffic situations</li>
             </ul>
           </div>
         </div>
       </section>
     </label>
-    <label for="nine">
+    <label for="eight">
       <div class="center">
         <img src="images/customer-service.png">
       </div>
