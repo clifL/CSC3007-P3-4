@@ -245,7 +245,7 @@ input:nth-of-type(6):checked ~ label {
 }
 
 input:nth-of-type(7):checked ~ label {
-	transform: translate3d(-601.6%, 0, 0);
+	transform: translate3d(-601.35%, 0, 0);
 }
 
 input:nth-of-type(8):checked ~ label {
