@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Milestone 2</title>
+  <!-- Resources -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type='text/css' media='all' href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap.min.css">
+  <!-- JS -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/index.js"></script>
+</head>
+
+<div id="loaderId" class="loader loader--active">
+  <div class="loader__tile"></div>
+  <div class="loader__tile"></div>
+  <div class="loader__tile"></div>
+  <div class="loader__tile"></div>
+  <div class="loader__tile"></div>
+</div>
+
+<body style="background-color: beige;">
+  <a href="index.html">
+    <div class="close-presentation">&times;</div>
+  </a>
+  <form>
+    <input type="radio" name="fancy" autofocus value="one" id="one" />
+    <input type="radio" name="fancy" value="two" id="two" />
+    <input type="radio" name="fancy" value="three" id="three" />
+    <input type="radio" name="fancy" value="four" id="four" />
+    <input type="radio" name="fancy" value="five" id="five" />
+    <input type="radio" name="fancy" value="six" id="six" />
+    <input type="radio" name="fancy" value="seven" id="seven" />
+    <input type="radio" name="fancy" value="eight" id="eight" />
+    <input type="radio" name="fancy" value="nine" id="nine" />
+    <input type="radio" name="fancy" value="nine" id="ten" />
+    <label for="one">
+      <div class="content">
+        <h1>title</h1>
+        <div class="points">
+          <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="two">
+      <div class="content">
+        <h1>title</h1>
+        <div class="points">
+          <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="three">
+      <div class="content">
+        <h1>title</h1>
+        <div class="points">
+          <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="four">
+      <div class="content">
+        <h1>title</h1>
+        <div class="points">
+          <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="five">
+      <div class="content">
+        <h1>title</h1>
+        <div class="points">
+          <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="six">
+      <div class="content">
+        <h1>title</h1>
+        <div class="points">
+          <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="seven">
+      <div class="content">
+        <h1>title</h1>
+        <div class="points">
+          <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="eight">
+      <section class="section">
+        <div class="close-section">&times;</div>
+        <div class="demo-box">Improvement 1</div>
+        <div class="demo-box-1">
+          <h1>Line Graph</h1>
+        </div>
+      </section>
+      <section class="section">
+        <div class="close-section">&times;</div>
+        <div class="demo-box">Improvement 2</div>
+        <div class="demo-box-1">
+          <h1>Bar Graph</h1>
+        </div>
+      </section>
+      <section class="section">
+        <div class="close-section">&times;</div>
+        <div class="demo-box">Improvement 3</div>
+        <div class="demo-box-1">
+          <h1>Pie Chart</h1>
+        </div>
+      </section>
+      <section class="section">
+        <div class="close-section">&times;</div>
+        <div class="demo-box">Improvement 4</div>
+        <div class="demo-box-1">
+          <h1>Geospatial Map</h1>
+        </div>
+      </section>
+    </label>
+    <label for="nine">
+      <div class="content">
+        <h1>title</h1>
+        <div class="points">
+          <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+          </ul>
+        </div>
+      </div>
+    </label>
+    <label for="ten">
+      <div class="center">
+        <img src="images/customer-service.png">
+      </div>
+    </label>
+  </form>
+</body>
+
+</html>
