@@ -1,0 +1,43 @@
+#map {
+  height: 100vh;
+}
+
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.legend {
+  line-height: 25px;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 10px;
+}
+
+.top {
+  height: 70px;
+}
+
+.left {
+  width: 100px;
+  margin: 10px;
+  float: left;
+}
+
+.right {
+  width: 80%;
+  float: right;
+  margin-right: 5%;
+}
+
+.leaflet-bottom {
+  margin-bottom: 95px;
+}

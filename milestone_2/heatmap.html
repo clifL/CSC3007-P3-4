@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heap Map</title>
+  <!-- Resources -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>=
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js"></script>
+  <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type='text/css' media='all' href="css/heatmap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap.min.css">
+  <!-- JS -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/heatmap.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+</head>
+
+<body>
+  <div class="content">
+    <div class="top">
+      <div class="left">
+        <input id="toggle-event" type="checkbox" checked data-toggle="toggle" data-on="Value" data-off="Percentage" data-onstyle="primary" data-offstyle="success">
+      </div>
+      <div class="right">
+        <input type="text" id="amount" style="border: 0; color: #17A2B8; font-weight: bold;" size="100" />
+        <div id="slider-range"></div>
+      </div>
+    </div>
+    <div id="map"></div>
+  </div>
+</body>
+
+</html>
