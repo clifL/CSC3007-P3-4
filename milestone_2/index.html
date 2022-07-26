@@ -16,6 +16,7 @@
   <!-- JS -->
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/case.js"></script>
+  <script src="js/epidemic.js"></script>
 </head>
 
 <div id="loaderId" class="loader loader--active">
@@ -53,9 +54,11 @@
           <ul>
             <li>Number of people in Hong Kong took 1st, 2nd, 3rd and 4th dose</li>
             <li>Number of new cases tested positive for Covid 19 in Hong Kong today</li>
-            <li>Total number of cases of Covid 19 patient by health category<br>(Confirmed, Asymptomatic, Re-positive)</li>
+            <li>Total number of cases of Covid 19 patient by health category<br>(Confirmed, Asymptomatic, Re-positive)
+            </li>
             <li>Total number of Death, Hospitalised and ICU cases</li>
-            <li>Additional number of cases tested positive today categorise by<br>Nucleic Acid Test, RAT, Local and Imported cases</li>
+            <li>Additional number of cases tested positive today categorise by<br>Nucleic Acid Test, RAT, Local and
+              Imported cases</li>
           </ul>
         </div>
       </div>
@@ -69,7 +72,8 @@
             <li>To keep track of any recent surge of covid19 cases</li>
             <li>Number of doses administered is enough for the population in Hong Kong</li>
             <li>Total number of Death, Hospitalised and ICU cases</li>
-            <li>Knowing vaccination will prevent severe symptoms, by tracking the amount of<br>people taking the number of each dosage of vaccination will know if the people<br>in Hong Kong are safe to go out</li>
+            <li>Knowing vaccination will prevent severe symptoms, by tracking the amount of<br>people taking the number
+              of each dosage of vaccination will know if the people<br>in Hong Kong are safe to go out</li>
           </ul>
         </div>
       </div>
@@ -155,14 +159,16 @@
             <br>
             <img src="/milestone_2/images/ArcGIS.gif" width="1000" height="600">
             <br><br>
-            <a href="/milestone_2/ArcGIS.html"><h3>Source Code</h3></a>
+            <a href="/milestone_2/ArcGIS.html">
+              <h3>Source Code</h3>
+            </a>
           </div>
         </section>
         <section class="section">
           <div class="close-section">&times;</div>
           <div class="demo-box">Other Charts</div>
           <div class="demo-box-1">
-            <h2>Input Canvas</h2>
+            <canvas id="barChart" style="padding:25px;"></canvas>
           </div>
         </section>
       </div>

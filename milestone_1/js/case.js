@@ -237,8 +237,8 @@ window.onload = function () {
       {
         label: 'ICU',
         data: [2, 4, 0, 8, 5, 9, 5, 2, 1, 2, 8, 2],
-        borderColor: 'rgb(255, 159, 64)',
-        backgroundColor: 'rgba(255, 159, 64, 0.5)',
+        borderColor: 'rgb(159, 43, 104)',
+        backgroundColor: 'rgba(159, 43, 104, 0.5)',
         borderWidth: 2
       }
     ]
