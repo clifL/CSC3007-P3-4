@@ -27,7 +27,7 @@ Promise.all([d3.csv("data/epidemic-curve.csv"), d3.csv("data/patients-needing-ox
         o2.push(category['Requires Oxygen Supplementation in General Ward'])
     })
 
-    const bar = document.getElementById('barChart');
+    const bar = document.getElementById('barChart2');
 
     const barData = {
         labels: age_groups,

@@ -1,8 +1,3 @@
-let width = 1200, height = 800;
-
-let svg = d3.select("svg")
-    .attr("viewBox", "0 0 " + width + " " + height)
-
 // Load external data
 Promise.all([d3.csv("data/week-on-week-infection-ratio.csv")]).then(data => {
     date = []
@@ -18,7 +13,7 @@ Promise.all([d3.csv("data/week-on-week-infection-ratio.csv")]).then(data => {
         })
     })
     const line = document.getElementById('lineChart');
-    console.log(date)
+
     const lineData = {
         labels: date,
         datasets: [
@@ -36,20 +31,26 @@ Promise.all([d3.csv("data/week-on-week-infection-ratio.csv")]).then(data => {
         data: lineData,
         options: {
             responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        display: true,
+                        autoSkip: true,
+                        maxTicksLimit: 3
+                    }
+                }]
+            },
             interaction: {
                 mode: 'index',
                 intersect: false,
             },
             plugins: {
-                legend: {
-                    position: 'top',
-                    display: false
-                },
                 title: {
                     display: true,
-                    text: 'Infection Ratio'
+                    text: 'Infection Rate'
                 }
             }
-        }
+        },
     });
 });
