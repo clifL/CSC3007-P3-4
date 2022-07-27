@@ -1,5 +1,5 @@
 #map {
-  height: 100vh;
+  height: 600px;
 }
 
 .info {
@@ -38,6 +38,6 @@
   margin-right: 5%;
 }
 
-.leaflet-bottom {
-  margin-bottom: 95px;
+#slider-range {
+  width: 700px;
 }

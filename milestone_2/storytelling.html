@@ -2,126 +2,213 @@
 <html>
 
 <head>
-    <title>Storytelling</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-    <!-- Resources -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap.min.css">
-    <!-- JS -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/infection.js"></script>
-    <script src="js/epidemic.js"></script>
-    <script src="js/patients.js"></script>
-    <style>
-        body,
-        html {
-            height: 100%;
-            font-family: "Inconsolata", sans-serif;
-        }
+  <title>Storytelling</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <!-- Resources -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.Default.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+  <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap.min.css">
+  <link rel="stylesheet" type='text/css' media='all' href="css/heatmap.css">
+  <link rel="stylesheet" type='text/css' media='all' href="css/cluster.css">
+  <!-- JS -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script src="js/infection.js"></script>
+  <script src="js/epidemic.js"></script>
+  <script src="js/patients.js"></script>
+  <script src="js/leaflet.js"></script>
 
-        .bgimg {
-            background-position: center;
-            background-size: cover;
-            background-image: url("/milestone_2/images/covid19.png");
-            min-height: 65%;
-        }
-    </style>
+  <style>
+    body,
+    html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+    }
+
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url("/milestone_2/images/covid19.png");
+      min-height: 65%;
+    }
+
+    .chartDiv {
+      padding: 0 15%;
+    }
+
+    .p-2 {
+      font-size: 30px;
+    }
+
+    #map-clinic {
+      height: 700px;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Header with image -->
-    <header class="bgimg w3-display-container w3-grayscale-min">
-        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-        </div>
-    </header>
-
-    <!-- Add a background color and large text to the whole page -->
-    <div class="w3-sand w3-grayscale w3-large">
-
-        <!-- About Container -->
-        <div class="w3-container">
-            <div class="w3-content" style="max-width:700px">
-                <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT COVID-19</span></h5>
-                <p>Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus.
-                    Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover
-                    without special treatment. However, some will become seriously ill and require medical attention.
-                </p>
-                <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">HOW IT SPREADS</span></h5>
-                <p>The virus can spread from an infected person’s mouth or nose in small liquid particles when they
-                    cough, sneeze, speak, sing or breathe. These particles range from larger respiratory droplets to
-                    smaller aerosols.
-                    You can be infected by breathing in the virus if you are near someone who has COVID-19, or by
-                    touching a contaminated surface and then your eyes, nose or mouth. The virus spreads more easily
-                    indoors and in crowded settings.</p>
-            </div>
-        </div>
-
-        <div class="w3-container">
-            <div class="w3-content" style="max-width:700px">
-                <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">INFECTION RATE</span></h5>
-                <p>The chart shows the trend/behaviour of the infection rate in Singapore over a span of a month.
-                    A spike in infection rate was observed in end of June and mid of July. This could be mainly due
-                    to the end of June holidays and students going back to school.
-                </p>
-                <canvas id="lineChart" style="padding:25px;"></canvas>
-            </div>
-        </div>
-
-        <div class="w3-container">
-            <div class="w3-content" style="max-width:700px">
-                <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">LOCAL/IMPORTED CASES</span></h5>
-                <p>The chart depicts the number of local covid19 cases as well as the imported covid19 cases over 
-                    10 months. The trend observed is that the number of local cases will increase over 3 months and 
-                    plunge down afterwards before continuing the trend.
-                </p>
-                <canvas id="barChart" style="padding:25px;"></canvas>
-            </div>
-        </div>
-
-        <div class="w3-container">
-            <div class="w3-content" style="max-width:700px">
-                <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Patients by Age Groups</span></h5>
-                <p>The chart illustrates the number of cases categorised for each age group starting from 0-11 years old to 
-                    70 years old and above. From the results, it is observed that COVID-19 impacts elderly that is 70 years old
-                    and above significantly as compared to the rest of the age group.
-                </p>
-                <canvas id="barChart2" style="padding:25px;"></canvas>
-            </div>
-        </div>
-
-        <!-- Contact/Area Container -->
-        <div class="w3-container" id="where" style="padding-bottom:32px;">
-            <div class="w3-content" style="max-width:700px">
-                <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
-                <p>Find us at some address at some place.</p>
-                <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
-                <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We
-                    understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both
-                    look and taste.</p>
-                <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
-                <form action="/action_page.php" target="_blank">
-                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required
-                            name="Name"></p>
-                    <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people"
-                            required name="People"></p>
-                    <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time"
-                            required name="date" value="2020-11-16T20:00"></p>
-                    <p><input class="w3-input w3-padding-16 w3-border" type="text"
-                            placeholder="Message \ Special requirements" required name="Message"></p>
-                    <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
-                </form>
-            </div>
-        </div>
-
-        <!-- End page content -->
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min">
+    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
     </div>
+  </header>
+
+  <!-- Add a background color and large text to the whole page -->
+  <div class="w3-sand w3-large">
+
+    <!-- About Container -->
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT COVID-19</span></h5>
+        <p>Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus.
+          Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover
+          without special treatment. However, some will become seriously ill and require medical attention.
+        </p>
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">HOW IT SPREADS</span></h5>
+        <p>The virus can spread from an infected person’s mouth or nose in small liquid particles when they
+          cough, sneeze, speak, sing or breathe. These particles range from larger respiratory droplets to
+          smaller aerosols.
+          You can be infected by breathing in the virus if you are near someone who has COVID-19, or by
+          touching a contaminated surface and then your eyes, nose or mouth. The virus spreads more easily
+          indoors and in crowded settings.</p>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">INFECTION RATE</span></h5>
+        <p>The chart shows the trend/behaviour of the infection rate in Singapore over a span of a month.
+          A spike in infection rate was observed in end of June and mid of July. This could be mainly due
+          to the end of June holidays and students going back to school.
+        </p>
+      </div>
+      <div class="chartDiv">
+        <canvas id="lineChart" style="padding:25px;"></canvas>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">LOCAL/IMPORTED CASES</span></h5>
+        <p>The chart depicts the number of local covid19 cases as well as the imported covid19 cases over
+          10 months. The trend observed is that the number of local cases will increase over 3 months and
+          plunge down afterwards before continuing the trend.
+        </p>
+      </div>
+      <div class="chartDiv">
+        <canvas id="barChart" style="padding:25px;"></canvas>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Patients by Age Groups</span></h5>
+        <p>The chart illustrates the number of cases categorised for each age group starting from 0-11 years old to
+          70 years old and above. From the results, it is observed that COVID-19 impacts elderly that is 70 years old
+          and above significantly as compared to the rest of the age group.
+        </p>
+      </div>
+      <div class="chartDiv">
+        <canvas id="barChart2" style="padding:25px;"></canvas>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Choropleth Map on Number of Covid 19 Cases</span></h5>
+        <p>The chart illustrates the number of cases and number of population categorised by area in Singapore. As sometimes the cases
+          of an area is high but it might be due to the population of the area, hence this might confuse and scare the users. Thus,
+          this chart have taken into consideration of the population of an area to understand how serious covid cases of an area is.
+        </p><br>
+      </div>
+      <div class="chartDiv">
+        <div class="content">
+          <div class="top">
+            <div class="left">
+              <input id="toggle-event" type="checkbox" checked data-toggle="toggle" data-on="Value" data-off="Percentage" data-onstyle="primary" data-offstyle="success">
+            </div>
+            <div class="right">
+              <input type="text" id="amount" style="border: 0; color: #17A2B8; font-weight: bold; width: 700px;" size="100" />
+              <div id="slider-range"></div>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Covid 19 Cases Locations</span></h5>
+        <p> The chart illustrates the location of covid cases in Singapore within a timeframe. The chart also have clustered
+          the covid cases to allow users to see at a glance the number of covid cases at an area.
+        </p><br>
+      </div>
+      <div class="chartDiv">
+        <input type="text" id="amountCluster" style="border: 0; color: #17A2B8; font-weight: bold; width: 700px;" size="100" />
+        <div id="slider-range-cluster"></div>
+        <div id="map-cluster"></div>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">COVID-19 Vaccines</span></h5>
+      </div>
+      <div class="chartDiv d-flex flex-row" style="align-items: center; justify-content: center;">
+        <div class="p-2"><img src="images/syringe.png" width="50" height="50"></div>
+        <div class="p-2" style="width: 200px;"><strong>93% of total population</strong></div>
+        <div class="p-2"><img src="images/syringe.png" width="50" height="50"></div>
+        <div class="p-2"><img src="images/syringe.png" width="50" height="50"></div>
+        <div class="p-2" style="width: 200px;"><strong>93% of total population</strong></div>
+        <div class="p-2"><img src="images/syringe.png" width="50" height="50"></div>
+        <div class="p-2"><img src="images/syringe.png" width="50" height="50"></div>
+        <div class="p-2"><img src="images/syringe.png" width="50" height="50"></div>
+        <div class="p-2" style="width: 200px;"><strong>79% of total population</strong></div>
+      </div>
+    </div>
+
+    <!-- Contact/Area Container -->
+    <div class="w3-container" id="where" style="padding-bottom:32px;">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">BOOK Vaccination NOW</span></h5>
+      </div>
+      <div class="chartDiv">
+        <p>Find us at these locations.</p>
+        <div id="map-clinic"></div>
+      </div>
+      <br>
+      <p>
+        <div class="w3-content" style="max-width:700px">
+          <form action="/action_page.php" target="_blank">
+            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+            <p>
+              <select class="w3-input w3-padding-16 w3-border" id="clinic" name="clinic">
+                <option value="default">--- Select Clinic ---</option>
+              </select>
+            </p>
+            <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+            <p><button class="w3-button w3-black" type="submit">Book Slot</button></p>
+          </form>
+        </div>
+      </p>
+    </div>
+    <!-- End page content -->
+  </div>
 
 </body>
 

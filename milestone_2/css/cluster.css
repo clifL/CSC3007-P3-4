@@ -1,10 +1,9 @@
-#map {
+#map-cluster {
   margin-top: 20px;
-  height: 100vh;
+  height: 750px;
 }
 
-#slider-range {
+#slider-range-cluster {
   width: 700px;
-  margin-left: 50px;
   margin-top: 8px;
 }

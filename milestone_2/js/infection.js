@@ -32,15 +32,15 @@ Promise.all([d3.csv("data/week-on-week-infection-ratio.csv")]).then(data => {
         options: {
             responsive: true,
             maintainAspectRatio: true,
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        display: true,
-                        autoSkip: true,
-                        maxTicksLimit: 3
-                    }
-                }]
-            },
+            // scales: {
+            //     xAxes: [{
+            //         ticks: {
+            //             display: true,
+            //             autoSkip: true,
+            //             maxTicksLimit: 3
+            //         }
+            //     }]
+            // },
             interaction: {
                 mode: 'index',
                 intersect: false,

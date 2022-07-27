@@ -1,5 +1,5 @@
 let markers
-let finalData
+let finalDataCluster
 
 function getMinMax(data) {
   let min = "";
@@ -18,11 +18,11 @@ function getMinMax(data) {
   return [min, max];
 }
 
-function generateSlider(map, data) {
+function generateClusterSlider(map, data) {
   minMax = getMinMax(data)
 
   $(function() {
-    $("#slider-range").slider({
+    $("#slider-range-cluster").slider({
       range: true,
       min: new Date(minMax[0]).getTime() / 1000,
       max: new Date(minMax[1]).getTime() / 1000,
@@ -32,12 +32,12 @@ function generateSlider(map, data) {
         $("#amount").val((new Date(ui.values[0] * 1000).toDateString()) + " - " + (new Date(ui.values[1] * 1000)).toDateString());
         markers.remove();
         markers = L.markerClusterGroup();
-        
+
         let filter = [];
 
-        for (i = 0; i < finalData.length; i++) {
-          if (new Date(finalData[i].Date).getTime() > new Date(ui.values[0] * 1000) && new Date(finalData[i].Date).getTime() < new Date(ui.values[1] * 1000)) {
-            filter.push(finalData[i])
+        for (i = 0; i < finalDataCluster.length; i++) {
+          if (new Date(finalDataCluster[i].Date).getTime() > new Date(ui.values[0] * 1000) && new Date(finalDataCluster[i].Date).getTime() < new Date(ui.values[1] * 1000)) {
+            filter.push(finalDataCluster[i])
           }
         }
 
@@ -62,16 +62,16 @@ function generateSlider(map, data) {
         map.addLayer(markers);
       }
     });
-    $("#amount").val((new Date($("#slider-range").slider("values", 0) * 1000).toDateString()) +
-      " - " + (new Date($("#slider-range").slider("values", 1) * 1000)).toDateString());
+    $("#amountCluster").val((new Date($("#slider-range-cluster").slider("values", 0) * 1000).toDateString()) +
+      " - " + (new Date($("#slider-range-cluster").slider("values", 1) * 1000)).toDateString());
   });
 }
 
 function generateCluster(map) {
   // Load external data
   Promise.all([d3.csv("data/covid.csv")]).then(data => {
-    generateSlider(map, data)
-    finalData = data[0]
+    generateClusterSlider(map, data)
+    finalDataCluster = data[0]
 
     for (i = 0; i < data[0].length; i++) {
       let date = data[0][i].Date;
@@ -95,17 +95,17 @@ function generateCluster(map) {
 
 window.onload = function() {
   markers = L.markerClusterGroup();
-  let map = L.map('map').setView([1.3521, 103.8198], 12);
+  let mapCluster = L.map('map-cluster').setView([1.3521, 103.8198], 11.5);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxzoom: 12,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+  }).addTo(mapCluster);
 
-  map.setMaxBounds([
-    [1.59000, 104.11475],
-    [1.023736, 103.590461],
+  mapCluster.setMaxBounds([
+    [1.55000, 104.11475],
+    [1.223736, 103.590461],
   ]);
 
-  generateCluster(map)
+  generateCluster(mapCluster)
 }
