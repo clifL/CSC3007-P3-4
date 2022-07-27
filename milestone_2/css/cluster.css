@@ -1,0 +1,10 @@
+#map {
+  margin-top: 20px;
+  height: 100vh;
+}
+
+#slider-range {
+  width: 700px;
+  margin-left: 50px;
+  margin-top: 8px;
+}
